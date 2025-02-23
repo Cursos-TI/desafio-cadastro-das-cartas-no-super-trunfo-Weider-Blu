@@ -11,37 +11,22 @@ typedef struct {
 } Cidade;
 
 int main() {
-    Cidade cidade;
-    
-    // Solicita ao usuário que insira os dados da cidade
-    printf("Cadastro de Cidade - Super Trunfo\n");
-    printf("Digite o código da cidade: ");
-    scanf("%d", &cidade.codigo);
-    getchar(); // Limpa o buffer do teclado
-    
-    printf("Digite o nome da cidade: ");
-    fgets(cidade.nome, 50, stdin);
-    
-    printf("Digite a população da cidade: ");
-    scanf("%d", &cidade.populacao);
-    
-    printf("Digite a área da cidade (em km²): ");
-    scanf("%f", &cidade.area);
-    
-    printf("Digite o PIB da cidade (em bilhões): ");
-    scanf("%f", &cidade.pib);
-    
-    printf("Digite o número de pontos turísticos: ");
-    scanf("%d", &cidade.pontos_turisticos);
+    Cidade cidades[2] = {
+        {1, "Rio de Janeiro\n", 6775561, 1200.27, 415.89, 30},
+        {2, "Vitória\n", 365855, 93.38, 32.15, 10}
+    };
     
     // Exibição dos dados cadastrados
-    printf("\nDados da Cidade Cadastrada:\n");
-    printf("Código: %d\n", cidade.codigo);
-    printf("Nome: %s", cidade.nome);
-    printf("População: %d habitantes\n", cidade.populacao);
-    printf("Área: %.2f km²\n", cidade.area);
-    printf("PIB: %.2f bilhões\n", cidade.pib);
-    printf("Pontos Turísticos: %d\n", cidade.pontos_turisticos);
+    printf("\nDados das Cidades Cadastradas:\n");
+    for (int i = 0; i < 2; i++) {
+        printf("\nCidade %d:\n", i + 1);
+        printf("Código: %d\n", cidades[i].codigo);
+        printf("Nome: %s", cidades[i].nome);
+        printf("População: %d habitantes\n", cidades[i].populacao);
+        printf("Área: %.2f km²\n", cidades[i].area);
+        printf("PIB: %.2f bilhões\n", cidades[i].pib);
+        printf("Pontos Turísticos: %d\n", cidades[i].pontos_turisticos);
+    }
     
     return 0;
 }
